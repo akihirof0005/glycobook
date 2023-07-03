@@ -2,7 +2,8 @@
 require 'java'
 require_relative  'jar/wurcsframework-1.2.13.jar'
 require_relative  'jar/slf4j-api-2.0.6.jar'
-module Wurcsframework
+
+module WurcsFrameWork
   java_import 'org.glycoinfo.WURCSFramework.util.validation.WURCSValidator'
   java_import 'org.slf4j.Logger'
   def self.validator(w)
