@@ -22,5 +22,11 @@ unit-test-job:   # This job runs in the test stage.
 
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
+  before_script:
+    - mkdir ~/.gem
+    - echo "---" > ~/.gem/credentials
+    - |
+      echo "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/rubygems: '${CI_JOB_TOKEN}'" >> ~/.gem/credentials
+    - chmod 0600 ~/.gem/credentials # rubygems requires 0600 permissions on the credentials file
   script:
     - gem push glycobook-0.0.1.gem --host https://gitlab.com/api/v4/projects/47350825/packages/rubygems
