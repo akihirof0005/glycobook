@@ -25,5 +25,5 @@ deploy-job:      # This job runs in the deploy stage.
   script:
     - >
       curl --header "JOB-TOKEN: $CI_JOB_TOKEN" \
-           --upload-file glycobook.gem \
+           --upload-file glycobook-0.0.1.gem \
            "https://gitlab.example.com/api/v4/projects/47350825/packages/gem"
