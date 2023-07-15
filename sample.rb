@@ -6,6 +6,7 @@ require 'wurcsframework'
 require 'glytoucan'
 
 pp WurcsFrameWork.validator(w)
+pp WurcsFrameWork_1_01.validator(w)
 pp Subsumption.topology(w)
 pp GlyTouCan.archetype(w)
 

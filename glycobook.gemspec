@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
                         "lib/jar/subsumption-0.9.5.jar",
                         "lib/jar/archetype-0.1.0.jar",
                         "lib/jar/slf4j-api-2.0.6.jar",
+                        "lib/jar/wurcsframework-1.0.1.jar",
                         "lib/jar/wurcsframework-1.2.13.jar"]
   spec.add_dependency 'java',  '~> 0.0.2'
 end
