@@ -3,7 +3,7 @@ image: jruby
 stages:          # List of stages for jobs, and their order of execution
   - build
   - test
-  - deploy
+  - release
 
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
@@ -20,17 +20,12 @@ unit-test-job:   # This job runs in the test stage.
     - gem install glycobook-0.0.1.gem
     - ruby sample.rb
 
-deploy-job:      # This job runs in the deploy stage.
-  stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
-  before_script:
-    - mkdir ~/.gem
-    - echo "---" > ~/.gem/credentials
-    - |
-      echo "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/rubygems: '${CI_JOB_TOKEN}'" >> ~/.gem/credentials
-    - chmod 0600 ~/.gem/credentials # rubygems requires 0600 permissions on the credentials file
+release_job:
+  stage: release
   script:
-    - bash install.sh
-    - gem build glycobook.gemspec
-    - cat ~/.gem/credentials
-    - gem push glycobook-0.0.1.gem --host ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/rubygems
-      
+    - echo "Performing release"
+    - curl --request POST --header "PRIVATE-TOKEN: $CI_JOB_TOKEN" \
+       --header "Content-Type: application/json" \
+       --data '{"tag_name": "0.0.1", "description": "Initial release"}' \
+       "https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/releases"
+
