@@ -10,6 +10,7 @@ Gem::Specification.new do |spec|
   spec.files         = ["lib/wurcsframework.rb",
                         "lib/subsumption.rb",
                         "lib/glytoucan.rb",
+                        "lib/wurcsverify.rb",
                         "lib/jar/subsumption-0.9.5.jar",
                         "lib/jar/archetype-0.1.0.jar",
                         "lib/jar/slf4j-api-2.0.6.jar",
