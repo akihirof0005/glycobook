@@ -26,5 +26,5 @@ deploy-job:      # This job runs in the deploy stage.
     - bash install.sh
     - gem build glycobook.gemspec
     - >
-      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --header "Content-Type: application/octet-stream" --upload-file glycobook-0.0.1.gem "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/gem"
+      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --header "Content-Type: application/gem" --upload-file glycobook-0.0.1.gem "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/gem"
       
