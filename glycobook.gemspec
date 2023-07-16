@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'glycobook'
-  spec.version       = '0.0.1'
+  spec.version       = '0.0.2'
   spec.authors       = ['Akihiro Fujita']
   spec.email         = ['akihirof0005@gmail.com']
   spec.summary       = 'glycobook Gem'
