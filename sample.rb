@@ -1,38 +1,63 @@
 require 'wurcsverify'
+require 'csv'
 
-array = ['WURCS=2.0/1,1,0/[u111xh_2*NCC/3=O_6*OC(CCCCCC/3CCCCCC0/3CCCCCC6)/13OC/7OC]/1/',
-'WURCS=2.0/1,1,0/[u111xh_2*NCC/3=O_6*OC(CCCCCC/3CCCCCC0/3CCCCCC6)/13OC/7OC]/1/',
-'WURCS=2.0/1,1,0/[u111xh_2*NCC/3=O_6*OC(CCCCCC/3CCCCCC0/3CCCCCC6)/13OC/7OC]/1/']
+data_path = './glytoucan-glycan.csv'
+csv_data = CSV.read(data_path, encoding: 'bom|utf-8')
 
+def aligned_character_color_diff(one, other)
+    max_length = [one.length, other.length].max
+    one_aligned = one.ljust(max_length)
+    other_aligned = other.ljust(max_length)
 
-def aligned_character_color_diff(old_text, new_text)
-    max_length = [old_text.length, new_text.length].max
-    old_aligned = old_text.ljust(max_length)
-    new_aligned = new_text.ljust(max_length)
+    one_diff = ""
+    other_diff = ""
+    flag = false
 
-    diff_result = ""
-
-    old_aligned.chars.each_with_index do |char, index|
-      if char != new_aligned[index]
-        diff_result += new_aligned[index].green
+    one_aligned.chars.each_with_index do |char, index|
+      if char != other_aligned[index]
+        flag = true
+        one_diff += "<span style=\"color: green; \">" + other_aligned[index] + "</span>"
+        other_diff += "<span style=\"color: magenta; \">" + one_aligned[index] + "</span>"
       else
-        diff_result += char
+        one_diff += char
+        other_diff += char
       end
     end
-    puts old_text
-    puts diff_result
+    return [ flag, one_diff, other_diff]
 end
+count =0
+puts "|ID|version|sequence|"
+puts "| :--- | :--- | :--- |"
+wf = WurcsVerify.initialize_module
+csv_data.each do |id,w|
+#csv_data[169089..170000].each do |id,w|
+  count = count +1
+  $stderr.print "\r"+count.to_s
+#  $stderr.puts count.to_s
+#  $stderr.puts id
 
-array.each do |w|
-
-
-if WurcsVerify.validatorVerify(w)["latest"]["ERROR"]
-pp WurcsVerify.validatorVerify(w)["latest"]["RESULTS"]
-else
-
-aligned_character_color_diff(
-  WurcsVerify.validatorVerify(w)["1.0.1"]["STANDERD"],
-  WurcsVerify.validatorVerify(w)["latest"]["STANDERD"])
-end
-
+  wfvv = wf.validatorVerify(w)
+  if wfvv["latest"]["ERROR"]
+    if wfvv["1.0.1"]["ERROR"]
+      $stderr.puts id
+      puts "|"+id+"|1.0.1| " + wfvv["1.0.1"]["RESULTS"].gsub(/\R/, "<br>") + "|"
+      puts "|^ |latest| " + wfvv["latest"]["RESULTS"].gsub(/\R/, "<br>") + "|"
+    else
+      puts "|"+id+"|1.0.1| " + wfvv["1.0.1"]["STANDERD"] + "|"
+      puts "|^ |latest| " + wfvv["latest"]["RESULTS"].gsub(/\R/, "<br>") + "|"
+    end
+  elsif wfvv["latest"]["UNVERIFIABLE"]
+    puts "|"+id+"|1.0.1| " + wfvv["1.0.1"]["STANDERD"] + "|"
+    puts "|^ |latest| " + wfvv["latest"]["RESULTS"].gsub(/\R/, "<br>")+ "|"
+  else
+    results = aligned_character_color_diff(
+      wfvv["1.0.1"]["STANDERD"],
+      wfvv["latest"]["STANDERD"])
+    if results[0]
+      puts "|"+id+"|1.0.1| " + results[1] + "|"
+      puts "|^ |latest| " + results[2] + "|"
+    else
+      next
+    end
+  end
 end
