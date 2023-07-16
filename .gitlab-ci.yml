@@ -31,5 +31,6 @@ deploy-job:      # This job runs in the deploy stage.
   script:
     - bash install.sh
     - gem build glycobook.gemspec
+    - cat ~/.gem/credentials
     - gem push glycobook-0.0.1.gem --host ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/rubygems
       
