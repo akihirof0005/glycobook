@@ -1,13 +1,38 @@
+require 'wurcsverify'
 
-w = "WURCS=2.0/8,13,12/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O][a2122h-1b_1-5_2*NCC/3=O_6*OSO/3=O/3=O][a2112h-1b_1-5_6*OSO/3=O/3=O][a1221m-1a_1-5]/1-1-2-3-1-4-5-3-1-4-6-7-8/a4-b1_a6-m1_b4-c1_c3-d1_c6-h1_d2-e1_e4-f1_f6-g2_h2-i1_i4-j1_j3-k1_k4-l1"
-
-require 'subsumption'
-require 'wurcsframework'
-require 'glytoucan'
-
-pp WurcsFrameWork.validator(w)
-pp WurcsFrameWork_1_01.validator(w)
-pp Subsumption.topology(w)
-pp GlyTouCan.archetype(w)
+array = ['WURCS=2.0/1,1,0/[u111xh_2*NCC/3=O_6*OC(CCCCCC/3CCCCCC0/3CCCCCC6)/13OC/7OC]/1/',
+'WURCS=2.0/1,1,0/[u111xh_2*NCC/3=O_6*OC(CCCCCC/3CCCCCC0/3CCCCCC6)/13OC/7OC]/1/',
+'WURCS=2.0/1,1,0/[u111xh_2*NCC/3=O_6*OC(CCCCCC/3CCCCCC0/3CCCCCC6)/13OC/7OC]/1/']
 
 
+def aligned_character_color_diff(old_text, new_text)
+    max_length = [old_text.length, new_text.length].max
+    old_aligned = old_text.ljust(max_length)
+    new_aligned = new_text.ljust(max_length)
+
+    diff_result = ""
+
+    old_aligned.chars.each_with_index do |char, index|
+      if char != new_aligned[index]
+        diff_result += new_aligned[index].green
+      else
+        diff_result += char
+      end
+    end
+    puts old_text
+    puts diff_result
+end
+
+array.each do |w|
+
+
+if WurcsVerify.validatorVerify(w)["latest"]["ERROR"]
+pp WurcsVerify.validatorVerify(w)["latest"]["RESULTS"]
+else
+
+aligned_character_color_diff(
+  WurcsVerify.validatorVerify(w)["1.0.1"]["STANDERD"],
+  WurcsVerify.validatorVerify(w)["latest"]["STANDERD"])
+end
+
+end

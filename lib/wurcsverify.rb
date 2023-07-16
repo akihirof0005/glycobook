@@ -3,7 +3,7 @@ require 'json'
 require 'pathname'
 require 'colorize'
 
-require_relative 'jar/slf4j-api-2.0.6.jar'
+require_relative 'jar/slf4j-api-2.0.7.jar'
 
 java_import 'java.net.URL'
 java_import 'java.net.URLClassLoader'
