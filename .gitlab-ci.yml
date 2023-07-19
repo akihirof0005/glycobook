@@ -12,21 +12,21 @@ build-job:       # This job runs in the build stage, which runs first.
     - gem build ./glycobook.gemspec
   artifacts:
     paths:
-      - glycobook-0.0.1.gem
+      - glycobook-0.0.3.gem
 
 unit-test-job:   # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.
   script:
-    - gem install glycobook-0.0.1.gem
-    - ruby sample.rb
+    - gem install glycobook-0.0.3.gem
+    - ruby test.rb
 
-release_job:
-  stage: release
-  script:
-    - echo "Performing release"
-    - >
-       curl --request POST --header "PRIVATE-TOKEN: $CI_JOB_TOKEN" 
-       --header "Content-Type: application/json" 
-       --data '{"tag_name": "0.0.1", "description": "Initial release"}' 
-       "https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/releases"
+#release_job:
+  #  stage: release
+  #script:
+    #    - echo "Performing release"
+    #- >
+#  curl --request POST --header "PRIVATE-TOKEN: $CI_JOB_TOKEN" 
+#      --header "Content-Type: application/json" 
+#      --data '{"tag_name": "0.0.1", "description": "Initial release"}' 
+#      "https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/releases"
 
