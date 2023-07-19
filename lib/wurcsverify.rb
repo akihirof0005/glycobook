@@ -10,7 +10,7 @@ java_import 'java.net.URLClassLoader'
 java_import 'org.slf4j.Logger'
 
 module WurcsVerify
-  def self.initialize_module
+  def self.init
       @wfw_latest_loader = self.create_custom_classloader("jar/wurcsframework-1.2.13.jar")
       @wfw_101_loader = self.create_custom_classloader("jar/wurcsframework-1.0.1.jar")
       @validator_latest = java.lang.Class.forName("org.glycoinfo.WURCSFramework.util.validation.WURCSValidator",true,@wfw_latest_loader)
