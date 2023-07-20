@@ -1,8 +1,8 @@
 require 'java'
 
-require_relative 'jar/subsumption-0.9.5.jar'
-require_relative 'jar/wurcsframework-1.2.13.jar'
-require_relative 'jar/slf4j-api-2.0.7.jar'
+require_relative 'jar/subsumption.jar'
+require_relative 'jar/wurcsframework.jar'
+require_relative 'jar/slf4j-api.jar'
 
 java_import 'org.glycoinfo.subsumption.manipulation.GraphManager'
 java_import 'org.glycoinfo.WURCSFramework.wurcs.graph.WURCSGraph'

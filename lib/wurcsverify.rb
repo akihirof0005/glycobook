@@ -3,7 +3,7 @@ require 'json'
 require 'pathname'
 require 'colorize'
 
-require_relative 'jar/slf4j-api-2.0.7.jar'
+require_relative 'jar/slf4j-api.jar'
 
 java_import 'java.net.URL'
 java_import 'java.net.URLClassLoader'
@@ -31,7 +31,7 @@ module WurcsVerify
     v_101 = @validator_101.new_instance
     v_101.start(w)
 
-    ret = {"latest" => self.dovalidator(v_latest),
+    ret = {"1.2.13" => self.dovalidator(v_latest),
             "1.0.1" => self.dovalidator101(v_101) 
           }
     return ret

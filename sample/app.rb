@@ -1,0 +1,4 @@
+require 'glycobook'
+
+GlycoBook.init
+

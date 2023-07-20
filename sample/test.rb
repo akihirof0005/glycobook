@@ -1,5 +1,5 @@
-require_relative './lib/glycanformatconverter.rb'
-require 'wurcsverify.rb'
+require 'glycanformatconverter'
+require 'wurcsverify'
 require 'csv'
 
 

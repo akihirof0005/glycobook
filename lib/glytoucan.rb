@@ -1,8 +1,8 @@
 require 'java'
 
-require_relative 'jar/archetype-0.1.0.jar'
-require_relative 'jar/wurcsframework-1.2.13.jar'
-require_relative 'jar/slf4j-api-2.0.7.jar'
+require_relative 'jar/archetype.jar'
+require_relative 'jar/wurcsframework.jar'
+require_relative 'jar/slf4j-api.jar'
 
 java_import 'org.glytoucan.Archetype'
 java_import 'org.glycoinfo.WURCSFramework.wurcs.graph.WURCSGraph'
