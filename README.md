@@ -1,5 +1,7 @@
 # getting start
 
+please Install jruby.
+
 ## Install
 ```bash
 gem install specific_install 
@@ -8,7 +10,8 @@ ruby -r glycobook -e GlycoBook.init
 
 vim  ~/.glycobook/jar.yml ##edit your setting file
 
-ruby -r glycobook -e GlycoBook.init ```
+ruby -r glycobook -e GlycoBook.init
+```
 
 ## Build
 ```bash
