@@ -37,18 +37,17 @@ module WurcsVerify
   end
 
   def self.dovalidator(validator)
-    reports = {}
-    reports["VALIDATOR"] = ["WURCSFramework-1.2.13"]
-    reports["WARNING"] = validator.getReport().hasWarning()
-    reports["UNVERIFIABLE"] = validator.getReport().hasUnverifiable()
+    reports = { "VALIDATOR" => ["WURCSFramework-1.2.13"],
+                "WARNING" => validator.getReport().hasWarning(),
+                "UNVERIFIABLE" => validator.getReport().hasUnverifiable() }
     return {"message" => reports,
             "StandardWURCS" => validator.getReport().standard_string(),
             "RESULTS" => validator.getReport().getResults() }
   end
   def self.dovalidator101(validator)
-    reports = {}
-    reports["VALIDATOR"] = ["WURCSFramework-1.0.1"]
-    reports["WARNING"] = validator.getReport().hasWarning()
+    reports = { "VALIDATOR" => ["WURCSFramework-1.0.1"],
+                "WARNING" => validator.getReport().hasWarning(),
+                "UNVERIFIABLE" => validator.getReport().hasUnverifiable() }
     return {"message" => reports,
             "StandardWURCS" => validator.getReport().standard_string(),
             "RESULTS" => validator.getReport().getResults() }

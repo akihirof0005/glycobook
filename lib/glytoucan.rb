@@ -12,6 +12,6 @@ java_import 'org.slf4j.LoggerFactory'
 
 module GlyTouCan
   def self.archetype(w)
-    Archetype.beBorn(w)
+    Hash[Archetype.beBorn(w)]
   end
 end
