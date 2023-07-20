@@ -1,24 +1,18 @@
-## dependency resolution
+# getting start
 
+## Install
 ```bash
-rbenv install jruby
-```
-```bash
-curl "https://gitlab.com/glycoinfo/wurcsframework/-/package_files/73054558/download" -o "lib/jar/wurcsframework-1.2.13.jar"
-curl "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.6/slf4j-api-2.0.6.jar" -o "lib/jar/slf4j-api-2.0.6.jar"
-curl "https://gitlab.glyco.info/glycosmos/subsumption/subsumption/-/package_files/238/download" -o "lib/jar/subsumption-0.9.5.jar"
-curl "https://gitlab.glyco.info/glycosmos/glytoucangroup/archetype/lib/-/package_files/334/download" -o "lib/jar/archetype-0.1.0.jar"
-```
+gem install specific_install 
+gem specific_install -l 'https://gitlab.com/glycobook/gem.git' 
+ruby -r glycobook -e GlycoBook.init
+
+vim  ~/.glycobook/jar.yml ##edit your setting file
+
+ruby -r glycobook -e GlycoBook.init ```
 
 ## Build
 ```bash
-gem build ./wurcsframework.gemspec
-
-``````
-## Install
-```bash
-gem install wurcsframework-0.0.1.gem
-
+gem build glycobook.gemspec
 ```
 ## sample program
 ```ruby

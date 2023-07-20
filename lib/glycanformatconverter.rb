@@ -1,9 +1,9 @@
 require 'java'
 
-require_relative 'jar/glycanformatconverter-2.9.1.jar'
-require_relative 'jar/wurcsframework-1.2.13.jar'
-require_relative 'jar/slf4j-api-2.0.7.jar'
-require_relative "jar/MolecularFramework-1.0.0.jar"
+require_relative 'jar/glycanformatconverter.jar'
+require_relative 'jar/wurcsframework.jar'
+require_relative 'jar/slf4j-api.jar'
+require_relative "jar/MolecularFramework.jar"
 
 java_import 'org.glycoinfo.GlycanFormatconverter.io.GlycoCT.WURCSToGlycoCT'
 java_import 'org.glycoinfo.GlycanFormatconverter.io.IUPAC.IUPACStyleDescriptor'

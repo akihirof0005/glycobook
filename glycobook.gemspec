@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'glycobook'
-  spec.version       = '0.0.4'
+  spec.version       = '0.0.5'
   spec.authors       = ['Akihiro Fujita']
   spec.email         = ['akihirof0005@gmail.com']
   spec.summary       = 'glycobook Gem'
@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
                         "lib/subsumption.rb",
                         "lib/glytoucan.rb",
                         "lib/glycobook.rb",
+                        "jar.yml",
                         "lib/wurcsverify.rb"]
   spec.add_dependency 'java',  '~> 0.0.2'
   spec.add_dependency 'colorize',  '~> 0.8.0'

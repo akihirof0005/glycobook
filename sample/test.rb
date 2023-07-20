@@ -17,5 +17,4 @@ puts glycam
 
 wf = WurcsVerify.init
 wfvv = wf.validatorVerify(w)
-pp wfvv["latest"]
-pp wfvv["1.0.1"]
+pp wfvv

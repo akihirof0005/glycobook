@@ -9,12 +9,12 @@ module WurcsFrameWork
   def self.validator(w)
     validator = WURCSValidator.new
     validator.start(w)
-    return { "WURCS" => validator.getReport().toString(),
-           "ERROR" => validator.getReport().hasError(),
-           "WARNING" => validator.getReport().hasWarning(),
-           "UNVERIFIABLE" => validator.getReport().hasUnverifiable(),
-           "STANDERD" => validator.getReport().standard_string(),
-           "RESULTS" => validator.getReport().getResults()
-    }
+    reports = {}
+    reports["VALIDATOR"] = ["WURCSFramework-1.2.13"]
+    reports["WARNING"] = validator.getReport().hasWarning()
+    reports["UNVERIFIABLE"] = validator.getReport().hasUnverifiable()
+    return {"message" => reports,
+            "StandardWURCS" => validator.getReport().standard_string(),
+            "RESULTS" => validator.getReport().getResults() }
   end
 end
