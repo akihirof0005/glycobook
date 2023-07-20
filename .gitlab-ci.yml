@@ -8,17 +8,17 @@ stages:          # List of stages for jobs, and their order of execution
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
   script:
-    - bash install.sh
     - gem build ./glycobook.gemspec
   artifacts:
     paths:
-      - glycobook-0.0.3.gem
+      - glycobook-0.0.4.gem
 
 unit-test-job:   # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.
   script:
-    - gem install glycobook-0.0.3.gem
-    - ruby test.rb
+    - gem install glycobook-0.0.4.gem
+    - ruby sample/app.rb
+    - ruby sample/test.rb
 
 #release_job:
   #  stage: release
