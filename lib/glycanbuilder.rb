@@ -19,7 +19,7 @@ java_import 'org.eurocarbdb.application.glycanbuilder.renderutil.SVGUtils'
 
 
 module GlycanBuilder
-  def self.generatePng(w)
+    def self.generatePng(w)
       workspace = BuilderWorkspace.new(GlycanRendererAWT.new)
   workspace.initData()
   workspace.setNotation(GraphicOptions::NOTATION_SNFG)
@@ -30,12 +30,16 @@ module GlycanBuilder
     stream = ByteArrayOutputStream.new
     ImageIO.write(image, "png", stream)
     base = Base64.getEncoder().encodeToString(stream.toByteArray())
-    return '<img src="data:image/png;base64,' + base + '\">'
+    return base
+    #return "<img src=\"data:image/png;base64,#{base}\">"
   rescue => e
        puts e.message
   end
   end
-  
+  def self.showImage(w)
+    base = self.generatePng(w)
+    IRuby.html "<img src=\"data:image/png;base64,#{base}\">"
+  end
   def self.generateSvg(wurcs) 
   workspace = BuilderWorkspace.new(GlycanRendererAWT.new)
   workspace.initData()
