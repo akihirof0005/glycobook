@@ -11,7 +11,7 @@ java_import 'javax.imageio.ImageIO'
 java_import 'org.eurocarbdb.application.glycanbuilder.BuilderWorkspace'
 java_import 'org.eurocarbdb.application.glycanbuilder.massutil.MassOptions'
 java_import 'org.eurocarbdb.application.glycanbuilder.renderutil.GlycanRendererAWT'
-java_import 'org.eurocarbdb.application.glycanbuilder.utill.GraphicOptions'
+java_import 'org.eurocarbdb.application.glycanbuilder.util.GraphicOptions'
 java_import 'org.glycoinfo.application.glycanbuilder.converterWURCS2.WURCS2Parser'
 
 java_import 'org.eurocarbdb.application.glycanbuilder.renderutil.SVGUtils'
