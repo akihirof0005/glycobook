@@ -1,6 +1,10 @@
 ---
-eula: no
+eula: false
 list:
+  - url: "https://repo1.maven.org/maven2/org/apache/xmlgraphics/batik-all/1.16/batik-all-1.16.jar"
+    file: "jar/batik-all.jar"
+  - url: "https://raw.githubusercontent.com/glycoinfo/MavenRepository/master/org/eurocarbdb/glycanbuilder/glycanbuilder2/1.23.1/glycanbuilder2-1.23.1.jar"
+    file: "jar/glycanbuilder2.jar"
   - url: "https://gitlab.com/glycoinfo/wurcsframework/-/package_files/73054558/download"
     file: "jar/wurcsframework.jar"
   - url: "https://gitlab.com/glycoinfo/wurcsframework/-/package_files/73054558/download"

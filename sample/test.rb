@@ -32,3 +32,7 @@ pp Subsumption.topology(w)
 require 'glytoucan'
 
 pp GlyTouCan.archetype(w)
+
+require 'glycanbuilder'
+pp GlycanBuilder.generatePng(w)
+#pp GlycanBuilder.generateSvg(w)
