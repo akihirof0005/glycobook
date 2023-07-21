@@ -30,7 +30,7 @@ module GlycanBuilder
     stream = ByteArrayOutputStream.new
     ImageIO.write(image, "png", stream)
     base = Base64.getEncoder().encodeToString(stream.toByteArray())
-    return "<img src=\"data:image/png;base64," + base + "\">", mime: 'text/html'
+    return '<img src="data:image/png;base64,' + base + '\">'
   rescue => e
        puts e.message
   end
