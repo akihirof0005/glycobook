@@ -64,9 +64,9 @@ module GlycanBuilder
     base = self.generatePng(w)
     IRuby.html "<img src=\"data:image/png;base64,#{base}\">"
     elsif format == "svg"
-    IRuby.html "<img src=\"data:image/svg;#{self.generateSvg(w)}\">"
+      IRuby.html self.generateSvg(w).sub(/\<svg /'<svg width="19px"')
     else
-      IRuby.html "#{format} is not supported"  
+      IRuby.html "#{format} is not supported"
     end
   end
 end
