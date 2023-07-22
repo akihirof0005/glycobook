@@ -35,4 +35,4 @@ pp GlyTouCan.archetype(w)
 
 require 'glycanbuilder'
 pp GlycanBuilder.generatePng(w)
-#pp GlycanBuilder.generateSvg(w)
+pp GlycanBuilder.generateSvg(w)
