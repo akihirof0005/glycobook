@@ -1,16 +1,16 @@
 require 'java'
 
-require_relative 'jar/glycanformatconverter.jar'
-require_relative 'jar/wurcsframework.jar'
-require_relative 'jar/slf4j-api.jar'
-require_relative "jar/MolecularFramework.jar"
+require_relative '../jar/glycanformatconverter.jar'
+require_relative '../jar/wurcsframework.jar'
+require_relative '../jar/slf4j-api.jar'
+require_relative "../jar/MolecularFramework.jar"
 
 java_import 'org.glycoinfo.GlycanFormatconverter.io.GlycoCT.WURCSToGlycoCT'
 java_import 'org.glycoinfo.GlycanFormatconverter.io.IUPAC.IUPACStyleDescriptor'
 java_import 'org.glycoinfo.GlycanFormatconverter.io.WURCS.WURCSImporter'
 java_import 'org.glycoinfo.GlycanFormatconverter.util.ExporterEntrance'
 
-module Glycobook
+module GlycoWrap
 class GlycanFormatConverter
 
 def wurcs2iupac(wurcs,style)
