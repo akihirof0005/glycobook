@@ -10,6 +10,7 @@ java_import 'org.glycoinfo.GlycanFormatconverter.io.IUPAC.IUPACStyleDescriptor'
 java_import 'org.glycoinfo.GlycanFormatconverter.io.WURCS.WURCSImporter'
 java_import 'org.glycoinfo.GlycanFormatconverter.util.ExporterEntrance'
 
+module Glycobook
 class GlycanFormatConverter
 
 def wurcs2iupac(wurcs,style)
@@ -71,5 +72,6 @@ def wurcs2glycam(wurcs)
   rescue => e
     e.printStackTrace()
   end
+end
 end
 end

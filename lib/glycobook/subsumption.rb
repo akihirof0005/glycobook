@@ -11,7 +11,7 @@ java_import 'org.glycoinfo.WURCSFramework.util.WURCSException'
 java_import 'org.slf4j.Logger'
 java_import 'org.slf4j.LoggerFactory'
 java_import 'org.glycoinfo.subsumption.generator.Topology'
-
+module GlycoBook
 class Subsumption
 
   def topology(w)
@@ -69,5 +69,5 @@ class Subsumption
       puts e.message
     end
   end
-
+  end
 end
