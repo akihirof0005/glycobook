@@ -1,12 +1,25 @@
 require 'open-uri'
 require 'net/http'
 require 'fileutils'
-  require 'yaml'
+require 'yaml'
+
+require_relative 'glycanbuilder'
+require_relative 'wurcsframework'
+require_relative 'glycanformatconverter'
+require_relative 'glytoucan'
+require_relative 'subsumption'
+
 module GlycoBook
+
+  include GlycanGuilder
+  include WurcsFrameWork
+  include GlycanFormatConverter
+  include GlyTouCan
+  include Subsumption
 
   def self.load_settings(file_path)
     downloads = []
-  
+
     if File.exist?(file_path)
       downloads = YAML.load_file(file_path)
     else
@@ -17,10 +30,11 @@ module GlycoBook
       puts "please open file:~/.glycobook/jar.yml and edit eula"
       exit
     end
-  
+
     downloads
   end
-def self.init
+
+  def self.init
 
 
 # YAMLファイルからdownloads情報をロード

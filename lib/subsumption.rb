@@ -12,9 +12,9 @@ java_import 'org.slf4j.Logger'
 java_import 'org.slf4j.LoggerFactory'
 java_import 'org.glycoinfo.subsumption.generator.Topology'
 
-module Subsumption
+class Subsumption
 
-  def self.topology(w)
+  def topology(w)
     g = nil
     begin
       g = Topology.beBorn(GraphManager.toGraph(w))
@@ -28,7 +28,7 @@ module Subsumption
   end
 
   java_import 'org.glycoinfo.subsumption.generator.MonosaccharideCompositionWithoutLinkage'
-  def self.monosaccharideCompositionWithoutLinkage(w)
+  def monosaccharideCompositionWithoutLinkage(w)
     g = nil
     begin
       g = MonosaccharideCompositionWithoutLinkage.beBorn(GraphManager.toGraph(w))
@@ -39,13 +39,13 @@ module Subsumption
   end
 
   java_import 'org.glycoinfo.subsumption.generator.CompositionWithLinkage'
-  def self.compositionWithLinkage(w) #出来てる
+  def compositionWithLinkage(w) #出来てる
     g = CompositionWithLinkage.beBorn(GraphManager.toGraph(w))
     return GraphManager.toWURCS(g)
   end
 
   java_import 'org.glycoinfo.subsumption.generator.BaseCompositionWithLinkage'
-  def self.baseCompositionWithLinkage(w) #出来てる
+  def baseCompositionWithLinkage(w) #出来てる
     g = nil
     begin
       g = BaseCompositionWithLinkage.beBorn(GraphManager.toGraph(w))
@@ -58,7 +58,7 @@ module Subsumption
   end
 
   java_import 'org.glycoinfo.subsumption.generator.BaseComposition'
-  def self.baseComposition(w)
+  def baseComposition(w)
     g = nil
     begin
       g = BaseComposition.beBorn(GraphManager.toGraph(w))

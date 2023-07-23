@@ -10,9 +10,9 @@ java_import 'org.glycoinfo.GlycanFormatconverter.io.IUPAC.IUPACStyleDescriptor'
 java_import 'org.glycoinfo.GlycanFormatconverter.io.WURCS.WURCSImporter'
 java_import 'org.glycoinfo.GlycanFormatconverter.util.ExporterEntrance'
 
-module GlycanFormatConverter
+class GlycanFormatConverter
 
-def self.wurcs2iupac(wurcs,style)
+def wurcs2iupac(wurcs,style)
   ret = {}
   ret["input"] =  wurcs
    
@@ -42,7 +42,7 @@ def self.wurcs2iupac(wurcs,style)
   return ret
 end
 
-def self.wurcs2glycoct(wurcs)
+def wurcs2glycoct(wurcs)
     ret = {}
     ret["input"] =  wurcs
   begin
@@ -63,7 +63,7 @@ def self.wurcs2glycoct(wurcs)
   return ret
 end
 
-def self.wurcs2glycam(wurcs)
+def wurcs2glycam(wurcs)
   wi = WURCSImporter.new
   ee = ExporterEntrance.new(wi.start(wurcs))
   begin

@@ -10,8 +10,8 @@ java_import 'org.glycoinfo.WURCSFramework.util.WURCSException'
 java_import 'org.slf4j.Logger'
 java_import 'org.slf4j.LoggerFactory'
 
-module GlyTouCan
-  def self.archetype(w)
+class GlyTouCan
+  def archetype(w)
     Hash[Archetype.beBorn(w)]
   end
 end
