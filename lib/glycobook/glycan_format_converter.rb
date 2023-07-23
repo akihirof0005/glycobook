@@ -10,7 +10,7 @@ java_import 'org.glycoinfo.GlycanFormatconverter.io.IUPAC.IUPACStyleDescriptor'
 java_import 'org.glycoinfo.GlycanFormatconverter.io.WURCS.WURCSImporter'
 java_import 'org.glycoinfo.GlycanFormatconverter.util.ExporterEntrance'
 
-module GlycoWrap
+module GlycoBook
 class GlycanFormatConverter
 
 def wurcs2iupac(wurcs,style)

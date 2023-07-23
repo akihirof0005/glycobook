@@ -9,7 +9,8 @@ java_import 'org.glycoinfo.WURCSFramework.wurcs.graph.WURCSGraph'
 java_import 'org.glycoinfo.WURCSFramework.util.WURCSException'
 java_import 'org.slf4j.Logger'
 java_import 'org.slf4j.LoggerFactory'
-module GlucoWrap
+
+module GlycoBook
 class GlyTouCan
   def archetype(w)
     Hash[Archetype.beBorn(w)]

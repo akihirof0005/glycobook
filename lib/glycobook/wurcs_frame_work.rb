@@ -1,7 +1,7 @@
 # lib/my_gem.rb
 require 'java'
 require_relative  '../jar/slf4j-api.jar'
-module GlycoWrap
+module GlycoBook
 class WurcsFrameWork
     require_relative  '../jar/wurcsframework.jar'
   java_import 'org.glycoinfo.WURCSFramework.util.validation.WURCSValidator'
