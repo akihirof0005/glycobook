@@ -1,14 +1,15 @@
 # getting start
 
-please Install jruby.
+Install jruby.
 
 ## Install
 ```bash
-gem install specific_install 
-gem specific_install -l 'https://gitlab.com/glycobook/gem.git' 
-ruby -r glycobook -e GlycoBook.init
+gem install glycobook --pre
+ 
+ruby -r bookinit -e BookInit.run
 
-vim  ~/.glycobook/jar.yml ##edit your setting file
+##edit your setting file
+vim  ~/.glycobook/jar.yml
 
 ruby -r bookinit -e BookInit.run
 ```
