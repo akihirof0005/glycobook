@@ -10,7 +10,7 @@ ruby -r glycobook -e GlycoBook.init
 
 vim  ~/.glycobook/jar.yml ##edit your setting file
 
-ruby -r glycobook -e GlycoBook.init
+ruby -r bookinit -e BookInit.run
 ```
 
 ## Build
