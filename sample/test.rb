@@ -24,5 +24,5 @@ gtc = GlycoBook::GlyTouCan.new
 pp gtc.archetype(w)
 
 gb = GlycoBook::GlycanBuilder.new
-pp gb.generatePng(w)
+pp gb.generatePng(w,1)
 pp gb.generateSvg(w)
