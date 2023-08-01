@@ -4,8 +4,9 @@ require 'fileutils'
 require 'yaml'
 
 module BookInit
-
+  
   def self.load_settings(file_path)
+  
     downloads = []
 
     if File.exist?(file_path)
@@ -23,15 +24,23 @@ module BookInit
   end
 
   def self.run
+    puts <<-EOT
+
+Would you like to resolve Java dependencies?(No/yes)
+    EOT
+
+  case gets.chomp
+    when "yes", "YES", "y"
+    when "no", "NO", "n"
+      exit 1
+    else
+      exit 1
+  end
 
 
     # YAMLファイルからdownloads情報をロード
     downloads = load_settings(ENV['HOME'] + "/.glycobook/jar.yml")
-    unless downloads["eula"]
-      puts "please open file:~/.glycobook/jar.yml and edit eula" 
-      exit
-    end
-
+  
     require 'open-uri'
 
     folder_path = File.dirname(__FILE__)+"/jar"

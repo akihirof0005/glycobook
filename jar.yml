@@ -1,5 +1,4 @@
 ---
-eula: false
 list:
   - url: "https://repo1.maven.org/maven2/org/apache/xmlgraphics/batik-all/1.16/batik-all-1.16.jar"
     file: "jar/batik-all.jar"
