@@ -1,12 +1,12 @@
 Gem::Specification.new do |spec|
   spec.name          = 'glycobook'
-  spec.version       = '0.1.0.alpha.2'
+  spec.version       = '0.1.0.alpha.3'
   spec.authors       = ['Akihiro Fujita']
   spec.email         = ['akihirof0005@gmail.com']
   spec.date          = '2023-07-31'
   spec.summary       = 'Glycobook is a JRuby library for glycaninformatics'
   spec.description   = 'Glycobook is a JRuby library for glycaninformatics'
-  spec.homepage      = 'https://github.com/akihirof0005/glycobook/tree/main'
+  spec.homepage      = 'https://github.com/akihirof0005/glycobook/blob/main/README.md'
   spec.license       = 'LGPL-3.0'
   spec.files         = ["lib/glycobook/wurcs_frame_work.rb",
                         "lib/glycobook/glycan_format_converter.rb",
@@ -17,7 +17,11 @@ Gem::Specification.new do |spec|
                         "lib/bookinit.rb",
                         "jar.yml",
                         "lib/wurcsverify.rb"]
+  spec.metadata = {
+                        "source_code_uri" => "https://github.com/akihirof0005/glycobook",
+                        "homepage_uri" => "https://github.com/akihirof0005/glycobook/blob/main/README.md",
+                        "changelog_uri" => "https://github.com/akihirof0005/glycobook ",
+                        }                      
   spec.platform       = 'java'
   spec.add_dependency 'java',  '~> 0.0.2'
-  spec.add_dependency 'colorize',  '~> 0.8.0'
 end

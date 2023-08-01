@@ -20,7 +20,32 @@ gem build glycobook.gemspec
 ```
 ## sample program
 ```ruby
-require 'wurcsframework'
+require 'glycobook'
 
-pp WurcsFrameWork.validator("WURCS=2.0/6,20,19/[u2122h_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a2122h-1b_1-5_2*NCC/3=O][a2112h-1b_1-5][a2112h-1a_1-5]/1-2-3-4-5-4-5-6-4-5-6-3-4-5-4-5-6-4-5-6/a4-b1_b3-c1_b6-l1_c2-d1_d4-e1_e3-f1_e6-i1_f4-g1_g3-h1_i4-j1_j3-k1_l2-m1_m4-n1_n3-o1_n6-r1_o4-p1_p3-q1_r4-s1_s3-t1")
+w = "WURCS=2.0/3,5,4/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5]/1-1-2-3-3/a4-b1_b4-c1_c3-d1_c6-e1"
+
+gfc = GlycoBook::GlycanFormatConverter.new
+
+iupac = gfc.wurcs2iupac(w,"condensed")
+iupacex = gfc.wurcs2iupac(w,"extended")
+ct = gfc.wurcs2glycoct(w)
+glycam = gfc.wurcs2glycam(w)
+
+puts iupac
+puts iupacex
+puts ct
+puts glycam
+
+wfw = GlycoBook::WurcsFrameWork.new
+puts wfw.validator(w)
+
+ssp =  GlycoBook::Subsumption.new
+pp ssp.topology(w)
+
+gtc = GlycoBook::GlyTouCan.new
+pp gtc.archetype(w)
+
+gb = GlycoBook::GlycanBuilder.new
+pp gb.generatePng(w,1)
+pp gb.generateSvg(w)
 ```
