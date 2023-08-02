@@ -10,7 +10,7 @@ class WurcsFrameWork
     validator = WURCSValidator.new
     validator.start(w)
     reports = {}
-    reports["VALIDATOR"] = ["WURCSFramework-1.2.13"]
+    reports["VALIDATOR"] = ["WURCSFramework-1.2.14"]
     reports["WARNING"] = validator.getReport().hasWarning()
     reports["ERROR"] = validator.getReport().hasError()
     reports["UNVERIFIABLE"] = validator.getReport().hasUnverifiable()

@@ -11,7 +11,7 @@ java_import 'org.slf4j.Logger'
 
 class WurcsVerify
   def initialize
-      @wfw_latest_loader = self.create_custom_classloader("jar/wurcsframework-1.2.13.jar")
+      @wfw_latest_loader = self.create_custom_classloader("jar/wurcsframework-1.2.14.jar")
       @wfw_101_loader = self.create_custom_classloader("jar/wurcsframework-1.0.1.jar")
       @validator_latest = java.lang.Class.forName("org.glycoinfo.WURCSFramework.util.validation.WURCSValidator",true,@wfw_latest_loader)
       @validator_101 = java.lang.Class.forName("org.glycoinfo.WURCSFramework.util.validation.WURCSValidator", true, @wfw_101_loader)
@@ -30,13 +30,13 @@ class WurcsVerify
     v_101 = @validator_101.new_instance
     v_101.start(w)
 
-    ret = {"1.2.13" => self.dovalidator(v_latest),
+    ret = {"1.2.14" => self.dovalidator(v_latest),
             "1.0.1" => self.dovalidator101(v_101) }
     return ret
   end
 
   def dovalidator(validator)
-    reports = { "VALIDATOR" => ["WURCSFramework-1.2.13"],
+    reports = { "VALIDATOR" => ["WURCSFramework-1.2.14"],
                 "WARNING" => validator.getReport().hasWarning(),
                 "ERROR" => validator.getReport().hasError(),
                 "UNVERIFIABLE" => validator.getReport().hasUnverifiable() }
