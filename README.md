@@ -2,22 +2,18 @@
 
 Install jruby.
 
-## Install
+## Install (for user)
 ```bash
 gem install glycobook --pre
  
 ruby -r bookinit -e BookInit.run
-
-##edit your setting file
-vim  ~/.glycobook/jar.yml
-
-ruby -r bookinit -e BookInit.run
 ```
 
-## Build
+## Build (for develop)
 ```bash
 gem build glycobook.gemspec
 ```
+
 ## sample program
 ```ruby
 require 'glycobook'
