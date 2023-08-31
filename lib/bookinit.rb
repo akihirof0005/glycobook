@@ -4,9 +4,9 @@ require 'fileutils'
 require 'yaml'
 
 module BookInit
-  
+
   def self.load_settings(file_path)
-  
+
     downloads = []
 
     if File.exist?(file_path)
@@ -16,8 +16,6 @@ module BookInit
         Dir.mkdir(ENV['HOME'] + "/.glycobook")
       end
       FileUtils.mv(File.dirname(File.expand_path(__FILE__)) + "/../jar.yml", file_path)
-      puts "please open file:~/.glycobook/jar.yml and edit eula"
-      exit
     end
 
     downloads
