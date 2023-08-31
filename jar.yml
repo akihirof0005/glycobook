@@ -16,7 +16,7 @@ list:
     file: "jar/subsumption.jar"
   - url: "https://gitlab.glyco.info/glycosmos/glytoucangroup/archetype/lib/-/package_files/469/download"
     file: "jar/archetype.jar"
-  - url: "https://gitlab.glyco.info/glycosmos/glytoucangroup/archetype/lib/-/package_files/469/download"
+  - url: "https://gitlab.com/glycoinfo/glycanformatconverter/-/package_files/81149971/download"
     file: "jar/glycanformatconverter.jar"
   - url: "https://raw.githubusercontent.com/glycoinfo/MavenRepository/master/org/eurocarbdb/MolecularFramework/1.0.0/MolecularFramework-1.0.0.jar"
     file: "jar/MolecularFramework.jar"
