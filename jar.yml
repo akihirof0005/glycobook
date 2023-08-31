@@ -14,7 +14,7 @@ list:
     file: "jar/slf4j-api.jar"
   - url: "https://gitlab.glyco.info/glycosmos/subsumption/subsumption/-/package_files/238/download"
     file: "jar/subsumption.jar"
-  - url: "https://gitlab.glyco.info/glycosmos/glytoucangroup/archetype/lib/-/package_files/446/download"
+  - url: "https://gitlab.glyco.info/glycosmos/glytoucangroup/archetype/lib/-/package_files/469/download"
     file: "jar/archetype.jar"
   - url: "https://gitlab.glyco.info/glycosmos/glytoucangroup/archetype/lib/-/package_files/469/download"
     file: "jar/glycanformatconverter.jar"
