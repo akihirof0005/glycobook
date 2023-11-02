@@ -1,6 +1,13 @@
 # getting start
 
-Install jruby.
+```bash
+# https://github.com/rbenv/rbenv-installer#rbenv-installer
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+rbenv install jruby-9.3.10.0
+rbenv global jruby-9.3.10.0
+# optional
+gem install iruby && iruby register --force
+```
 
 ## Install (for user)
 ```bash
