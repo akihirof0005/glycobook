@@ -1,9 +1,9 @@
 Gem::Specification.new do |spec|
   spec.name          = 'glycobook'
-  spec.version       = '0.1.0.alpha.10'
+  spec.version       = '0.1.0.alpha.11'
   spec.authors       = ['Akihiro Fujita']
   spec.email         = ['akihirof0005@gmail.com']
-  spec.date          = '2023-09-01'
+  spec.date          = '2023-11-15'
   spec.summary       = 'Glycobook is a JRuby library for glycaninformatics'
   spec.description   = 'Glycobook is a JRuby library for glycaninformatics'
   spec.homepage      = 'https://github.com/akihirof0005/glycobook/blob/main/README.md'
