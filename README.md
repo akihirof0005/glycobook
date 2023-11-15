@@ -1,10 +1,20 @@
 # getting start
 
 ```bash
-# https://github.com/rbenv/rbenv-installer#rbenv-installer
-curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+# https://github.com/rbenv/rbenv#basic-git-checkout
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+
+echo 'eval "$(~/.rbenv/bin/rbenv init - bash)"' >> ~/.bashrc
+echo 'eval "$(~/.rbenv/bin/rbenv init - zsh)"' >> ~/.zshrc
+
+source ~/.bashrc
+source ~/.zshrc
+
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+
 rbenv install jruby-9.3.10.0
 rbenv global jruby-9.3.10.0
+
 # optional
 gem install iruby && iruby register --force
 ```
