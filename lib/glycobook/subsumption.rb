@@ -57,7 +57,7 @@ class Subsumption
     end
   end
 
-  java_import 'org.glycoinfo.subsumption.generator.BaseComposition'
+  java_import 'org.glycoinfo.subsumption.generator.BaseCompositionWithoutLinkage'
   def baseComposition(w)
     g = nil
     begin
