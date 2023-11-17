@@ -10,7 +10,7 @@ class JRubySLF4JLogger < Logger
     super(STDOUT)  # STDOUT is dummy
     @java_logger = LoggerFactory.getLogger(name)
   end
-  def add(severity, message , progname , &block)
+  def add(severity, progname ,  message, &block)
 
   message = block.call if block
   message = message.to_s

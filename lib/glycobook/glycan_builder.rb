@@ -2,7 +2,6 @@ require 'java'
 
 require_relative '../jar/glycanbuilder2.jar'
 require_relative '../jar/wurcsframework.jar'
-require_relative '../jar/slf4j-api.jar'
 require_relative "../jar/batik-all.jar"
 
 java_import 'java.io.ByteArrayOutputStream'
