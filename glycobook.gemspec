@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
                         "lib/glycobook/subsumption.rb",
                         "lib/glycobook/gly_tou_can.rb",
                         "lib/glycobook/glycan_builder.rb",
-                        'lib/glycobook/mol_wurcs.rb'
+                        'lib/glycobook/mol_wurcs.rb',
                         "lib/glycobook.rb",
                         "lib/bookinit.rb",
                         "jar.yml",
