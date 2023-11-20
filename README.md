@@ -76,4 +76,7 @@ pp gtc.archetype(w)
 gb = GlycoBook::GlycanBuilder.new
 pp gb.generatePng(w,1)
 pp gb.generateSvg(w)
+
+mw = GlycoBook::MolWURCS.new
+pp mw.wurcs2mdlmol(w)
 ```
