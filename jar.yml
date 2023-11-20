@@ -40,7 +40,7 @@ libraries:
     info: "https://www.slf4j.org/index.html"
     version: 2.0.9
     url: "https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/2.0.9/slf4j-simple-2.0.9.jar"
-    file: "jar/slf4j-simple-2.0.9.jar"
+    file: "jar/slf4j-simple.jar"
 
   - name: subsumption
     info: "https://gitlab.glyco.info/glycosmos/subsumption/subsumption"
@@ -65,3 +65,15 @@ libraries:
     version: 1.0.0
     url: "https://raw.githubusercontent.com/glycoinfo/MavenRepository/master/org/eurocarbdb/MolecularFramework/1.0.0/MolecularFramework-1.0.0.jar"
     file: "jar/MolecularFramework.jar"
+  
+  - name: The Chemistry Development Kit
+    info: https://github.com/cdk/cdk
+    version: 2.9
+    url: https://repo1.maven.org/maven2/org/openscience/cdk/cdk-core/2.9/cdk-core-2.9.jar
+    file: cdk-core.jar
+  
+  - name: MolWURCS
+    info: https://gitlab.com/glycoinfo/molwurcs
+    version: 0.10.2
+    url: https://gitlab.com/glycoinfo/molwurcs/-/package_files/89942780/download
+    file: MolWURCS.jar
