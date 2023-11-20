@@ -1,5 +1,19 @@
 # getting start
 
+## Install
+
+### Java (version 11.0.9)
+```bash
+# https://sdkman.io/
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# example for Mac
+sdk install java 11.0.19-tem
+sdk default java 11.0.19-tem 
+```
+### JRuby
+
 ```bash
 # https://github.com/rbenv/rbenv#basic-git-checkout
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
@@ -19,7 +33,7 @@ rbenv global jruby-9.3.10.0
 gem install iruby && iruby register --force
 ```
 
-## Install (for user)
+### GlycoBook
 ```bash
 gem install glycobook --pre
 
