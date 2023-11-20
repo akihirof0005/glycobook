@@ -1,7 +1,7 @@
-require "glycobook"
+require "java"
 
+require_relative '../jar/cdk.jar'
 require_relative '../jar/MolWURCS.jar'
-require_relative '../jar/cdk-core.jar'
 
 java_import 'org.glycoinfo.MolWURCS.io.formats.ChemFormatType'
 java_import 'org.openscience.cdk.exception.CDKException'

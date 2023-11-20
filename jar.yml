@@ -33,10 +33,10 @@ libraries:
   - name: slf4j-api
     info: "https://www.slf4j.org/index.html"
     version: 2.0.9
-    url: "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar"
+    url: https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar
     file: "jar/slf4j-api.jar"
 
-  - name: slf4j-simple-2.0.9
+  - name: slf4j-simple
     info: "https://www.slf4j.org/index.html"
     version: 2.0.9
     url: "https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/2.0.9/slf4j-simple-2.0.9.jar"
@@ -69,11 +69,11 @@ libraries:
   - name: The Chemistry Development Kit
     info: https://github.com/cdk/cdk
     version: 2.9
-    url: https://repo1.maven.org/maven2/org/openscience/cdk/cdk-core/2.9/cdk-core-2.9.jar
-    file: cdk-core.jar
-  
+    url: https://github.com/cdk/cdk/releases/download/cdk-2.9/cdk-2.9.jar
+    file: jar/cdk.jar
+
   - name: MolWURCS
     info: https://gitlab.com/glycoinfo/molwurcs
     version: 0.10.2
     url: https://gitlab.com/glycoinfo/molwurcs/-/package_files/89942780/download
-    file: MolWURCS.jar
+    file: jar/MolWURCS.jar
