@@ -9,15 +9,13 @@ module BookInit
 
     downloads = []
 
-    if File.exist?(file_path)
-      downloads = YAML.load_file(file_path)
-    else
+    unless File.exist?(file_path)
       unless Dir.exist?(ENV['HOME'] + "/.glycobook")
         Dir.mkdir(ENV['HOME'] + "/.glycobook")
       end
       FileUtils.mv(File.dirname(File.expand_path(__FILE__)) + "/../jar.yml", file_path)
     end
-
+    downloads = YAML.load_file(file_path)
     downloads
   end
 
@@ -36,20 +34,18 @@ Would you like to resolve Java dependencies?(No/yes)
   end
 
 
-    # YAMLファイルからdownloads情報をロード
-    downloads = load_settings(ENV['HOME'] + "/.glycobook/jar.yml")
-  
-    require 'open-uri'
+  # YAMLファイルからdownloads情報をロード
+  downloads = load_settings(ENV['HOME'] + "/.glycobook/jar.yml")
 
-    folder_path = File.dirname(__FILE__)+"/jar"
-    unless Dir.exist?(folder_path)
-      FileUtils.mkdir_p(folder_path)
-      puts "Folder created: #{folder_path}"
+  folder_path = File.dirname(__FILE__)+"/jar"
+  unless Dir.exist?(folder_path)
+    FileUtils.mkdir_p(folder_path)
+    puts "Folder created: #{folder_path}"
     else
       puts "Folder already exists: #{folder_path}"
     end
     # ダウンロードを実行する
-    downloads["list"].each do |download|
+    downloads["libraries"].each do |download|
 
       uri = URI(download["url"])
       response = Net::HTTP.get_response(uri)
