@@ -22,7 +22,8 @@ gem install iruby && iruby register --force
 ## Install (for user)
 ```bash
 gem install glycobook --pre
- 
+
+#This command has an issue because it will fail the first time, so please try again. 
 ruby -r bookinit -e BookInit.run
 ```
 
