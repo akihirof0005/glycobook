@@ -28,4 +28,4 @@ pp gb.generatePng(w,1)
 pp gb.generateSvg(w)
 
 mw = GlycoBook::MolWURCS.new
-pp mw.wurcs2mdlmol(w)
+pp mw.wurcs2mol(w,"smiles")
