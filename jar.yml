@@ -44,7 +44,7 @@ libraries:
 
   - name: subsumption
     info: "https://gitlab.glyco.info/glycosmos/subsumption/subsumption"
-    version: 0.9.6
+    version: 0.9.9
     url: "https://gitlab.glyco.info/glycosmos/subsumption/subsumption/-/package_files/647/download"
     file: "jar/subsumption.jar"
 
