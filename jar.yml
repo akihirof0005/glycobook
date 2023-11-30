@@ -66,7 +66,7 @@ libraries:
     url: "https://raw.githubusercontent.com/glycoinfo/MavenRepository/master/org/eurocarbdb/MolecularFramework/1.0.0/MolecularFramework-1.0.0.jar"
     file: "jar/MolecularFramework.jar"
   
-  - name: The Chemistry Development Kit
+  - name: TheChemistryDevelopmentKit
     info: https://github.com/cdk/cdk
     version: 2.9
     url: https://github.com/cdk/cdk/releases/download/cdk-2.9/cdk-2.9.jar
