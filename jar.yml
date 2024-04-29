@@ -44,8 +44,8 @@ libraries:
 
   - name: subsumption
     info: "https://gitlab.glyco.info/glycosmos/subsumption/subsumption"
-    version: 0.9.9
-    url: "https://gitlab.glyco.info/glycosmos/subsumption/subsumption/-/package_files/647/download"
+    version: 0.10.0
+    url: "https://gitlab.glyco.info/glycosmos/subsumption/subsumption/-/package_files/729/download"
     file: "jar/subsumption.jar"
 
   - name: archetype
