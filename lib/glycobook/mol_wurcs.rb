@@ -13,17 +13,19 @@ java_import 'org.openscience.cdk.DefaultChemObjectBuilder'
 java_import 'org.openscience.cdk.io.SDFWriter'
 java_import 'org.openscience.cdk.smiles.SmilesGenerator'
 java_import 'org.openscience.cdk.silent.SilentChemObjectBuilder'
-java_import 'java.io.StringReader'
 java_import 'java.nio.file.Files'
 java_import 'java.nio.file.Paths'
-java_import 'java.io.IOException'
 java_import 'java.lang.System'
 java_import 'java.util.ArrayList'
 java_import 'java.io.StringWriter'
+java_import 'java.io.IOException'
+java_import 'java.io.StringReader'
 
 module GlycoBook
 class MolWURCS
-
+# @param [String] w String of WURCS
+# @param [String] format: smiles or sdf
+# @return [String] string with specified molecular descriptor
 def wurcs2mol(w,format)
 
   begin
