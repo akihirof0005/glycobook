@@ -44,8 +44,8 @@ libraries:
 
   - name: subsumption
     info: "https://gitlab.glyco.info/glycosmos/subsumption/subsumption"
-    version: 0.9.6
-    url: "https://gitlab.glyco.info/glycosmos/subsumption/subsumption/-/package_files/590/download"
+    version: 0.9.9
+    url: "https://gitlab.glyco.info/glycosmos/subsumption/subsumption/-/package_files/647/download"
     file: "jar/subsumption.jar"
 
   - name: archetype
@@ -66,7 +66,7 @@ libraries:
     url: "https://raw.githubusercontent.com/glycoinfo/MavenRepository/master/org/eurocarbdb/MolecularFramework/1.0.0/MolecularFramework-1.0.0.jar"
     file: "jar/MolecularFramework.jar"
   
-  - name: The Chemistry Development Kit
+  - name: TheChemistryDevelopmentKit
     info: https://github.com/cdk/cdk
     version: 2.9
     url: https://github.com/cdk/cdk/releases/download/cdk-2.9/cdk-2.9.jar
