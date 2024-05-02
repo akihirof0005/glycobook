@@ -9,18 +9,12 @@ module BookInit
   
     downloads = []
 
-    if File.exist?(file_path)
-      downloads = YAML.load_file(file_path)
-    else
-      unless Dir.exist?(ENV['HOME'] + "/.glycobook")
-        Dir.mkdir(ENV['HOME'] + "/.glycobook")
-      end
-      FileUtils.mv(File.dirname(File.expand_path(__FILE__)) + "/../jar.yml", file_path)
-      puts "please open file:~/.glycobook/jar.yml and edit eula"
-      exit
+    unless Dir.exist?(ENV['HOME'] + "/.glycobook")
+      Dir.mkdir(ENV['HOME'] + "/.glycobook")
     end
+    FileUtils.mv(File.dirname(File.expand_path(__FILE__)) + "/../jar.yml", file_path)
+    downloads = YAML.load_file(file_path)
 
-    downloads
   end
 
   def self.run
