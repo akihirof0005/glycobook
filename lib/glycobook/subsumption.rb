@@ -2,15 +2,13 @@ require 'java'
 
 require_relative '../jar/subsumption.jar'
 require_relative '../jar/wurcsframework.jar'
-require_relative '../jar/slf4j-api.jar'
 
 java_import 'org.glycoinfo.subsumption.manipulation.GraphManager'
 java_import 'org.glycoinfo.WURCSFramework.wurcs.graph.WURCSGraph'
 java_import 'org.glycoinfo.subsumption.util.GraphManagerException'
 java_import 'org.glycoinfo.WURCSFramework.util.WURCSException'
-java_import 'org.slf4j.Logger'
-java_import 'org.slf4j.LoggerFactory'
 java_import 'org.glycoinfo.subsumption.generator.Topology'
+
 module GlycoBook
 class Subsumption
 
@@ -57,7 +55,7 @@ class Subsumption
     end
   end
 
-  java_import 'org.glycoinfo.subsumption.generator.BaseComposition'
+  java_import 'org.glycoinfo.subsumption.generator.BaseCompositionWithoutLinkage'
   def baseComposition(w)
     g = nil
     begin

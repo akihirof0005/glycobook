@@ -1,23 +1,51 @@
 # getting start
 
-Install jruby.
-
 ## Install
+
+### Java (version 11.0.9)
+```bash
+# https://sdkman.io/
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# example for Mac
+sdk install java 11.0.19-tem
+sdk default java 11.0.19-tem 
+```
+### JRuby
+
+```bash
+# https://github.com/rbenv/rbenv#basic-git-checkout
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+
+echo 'eval "$(~/.rbenv/bin/rbenv init - bash)"' >> ~/.bashrc
+echo 'eval "$(~/.rbenv/bin/rbenv init - zsh)"' >> ~/.zshrc
+
+source ~/.bashrc
+source ~/.zshrc
+
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+
+rbenv install jruby-9.3.10.0
+rbenv global jruby-9.3.10.0
+
+# optional
+gem install iruby && iruby register --force
+```
+
+### GlycoBook
 ```bash
 gem install glycobook --pre
- 
-ruby -r bookinit -e BookInit.run
 
-##edit your setting file
-vim  ~/.glycobook/jar.yml
-
+#This command has an issue because it will fail the first time, so please try again. 
 ruby -r bookinit -e BookInit.run
 ```
 
-## Build
+## Build (for develop)
 ```bash
 gem build glycobook.gemspec
 ```
+
 ## sample program
 ```ruby
 require 'glycobook'
@@ -48,4 +76,7 @@ pp gtc.archetype(w)
 gb = GlycoBook::GlycanBuilder.new
 pp gb.generatePng(w,1)
 pp gb.generateSvg(w)
+
+mw = GlycoBook::MolWURCS.new
+pp mw.wurcs2mol(w,"smiles")
 ```

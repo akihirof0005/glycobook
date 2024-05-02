@@ -2,7 +2,6 @@ require 'java'
 
 require_relative '../jar/glycanformatconverter.jar'
 require_relative '../jar/wurcsframework.jar'
-require_relative '../jar/slf4j-api.jar'
 require_relative "../jar/MolecularFramework.jar"
 
 java_import 'org.glycoinfo.GlycanFormatconverter.io.GlycoCT.WURCSToGlycoCT'

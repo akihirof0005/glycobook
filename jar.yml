@@ -1,22 +1,79 @@
 ---
-list:
-  - url: "https://repo1.maven.org/maven2/org/apache/xmlgraphics/batik-all/1.16/batik-all-1.16.jar"
+libraries:
+  - name: batik-all
+    info: "https://xmlgraphics.apache.org/batik/download.html"
+    version: 1.16
+    url: "https://repo1.maven.org/maven2/org/apache/xmlgraphics/batik-all/1.16/batik-all-1.16.jar"
     file: "jar/batik-all.jar"
-  - url: "https://raw.githubusercontent.com/glycoinfo/MavenRepository/master/org/eurocarbdb/glycanbuilder/glycanbuilder2/1.23.1/glycanbuilder2-1.23.1.jar"
+
+  - name: glycanbuilder2
+    info: "https://gitlab.com/glycoinfo/glycanbuilder2"
+    version: 1.23.1
+    url: "https://raw.githubusercontent.com/glycoinfo/MavenRepository/master/org/eurocarbdb/glycanbuilder/glycanbuilder2/1.23.1/glycanbuilder2-1.23.1.jar"
     file: "jar/glycanbuilder2.jar"
-  - url: "https://gitlab.com/glycoinfo/wurcsframework/-/package_files/87428121/download"
+
+  - name: wurcsframework
+    info: "https://gitlab.com/glycoinfo/wurcsframework"
+    version: 1.2.14
+    url: "https://gitlab.com/glycoinfo/wurcsframework/-/package_files/87428121/download"
     file: "jar/wurcsframework.jar"
-  - url: "https://gitlab.com/glycoinfo/wurcsframework/-/package_files/87428121/download"
+
+  - name: wurcsframework-1.2.14
+    info: "https://gitlab.com/glycoinfo/wurcsframework"
+    version: 1.2.14
+    url: "https://gitlab.com/glycoinfo/wurcsframework/-/package_files/87428121/download"
     file: "jar/wurcsframework-1.2.14.jar"
-  - url: "https://gitlab.com/glycoinfo/wurcsframework/-/package_files/70458150/download"
+
+  - name: wurcsframework-1.0.1
+    info: "https://gitlab.com/glycoinfo/wurcsframework"
+    version: 1.0.1
+    url: "https://gitlab.com/glycoinfo/wurcsframework/-/package_files/70458150/download"
     file: "jar/wurcsframework-1.0.1.jar"
-  - url: "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar"
+
+  - name: slf4j-api
+    info: "https://www.slf4j.org/index.html"
+    version: 2.0.9
+    url: https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar
     file: "jar/slf4j-api.jar"
-  - url: "https://gitlab.glyco.info/glycosmos/subsumption/subsumption/-/package_files/238/download"
+
+  - name: slf4j-simple
+    info: "https://www.slf4j.org/index.html"
+    version: 2.0.9
+    url: "https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/2.0.9/slf4j-simple-2.0.9.jar"
+    file: "jar/slf4j-simple.jar"
+
+  - name: subsumption
+    info: "https://gitlab.glyco.info/glycosmos/subsumption/subsumption"
+    version: 0.10.0
+    url: "https://gitlab.glyco.info/glycosmos/subsumption/subsumption/-/package_files/729/download"
     file: "jar/subsumption.jar"
-  - url: "https://gitlab.glyco.info/glycosmos/glytoucangroup/archetype/lib/-/package_files/334/download"
+
+  - name: archetype
+    info: "https://gitlab.glyco.info/glycosmos/glytoucangroup/archetype/lib"
+    version: 0.1.4
+    url: "https://gitlab.glyco.info/glycosmos/glytoucangroup/archetype/lib/-/package_files/489/download"
     file: "jar/archetype.jar"
-  - url: "https://gitlab.com/glycoinfo/glycanformatconverter/-/package_files/81149971/download"
+
+  - name: glycanformatconverter
+    info: "https://gitlab.com/glycoinfo/glycanformatconverter"
+    version: 2.10.0
+    url: "https://gitlab.com/glycoinfo/glycanformatconverter/-/package_files/81149971/download"
     file: "jar/glycanformatconverter.jar"
-  - url: "https://raw.githubusercontent.com/glycoinfo/MavenRepository/master/org/eurocarbdb/MolecularFramework/1.0.0/MolecularFramework-1.0.0.jar"
+
+  - name: MolecularFramework
+    info: "https://github.com/glycoinfo/MolecularFramework"
+    version: 1.0.0
+    url: "https://raw.githubusercontent.com/glycoinfo/MavenRepository/master/org/eurocarbdb/MolecularFramework/1.0.0/MolecularFramework-1.0.0.jar"
     file: "jar/MolecularFramework.jar"
+  
+  - name: TheChemistryDevelopmentKit
+    info: https://github.com/cdk/cdk
+    version: 2.9
+    url: https://github.com/cdk/cdk/releases/download/cdk-2.9/cdk-2.9.jar
+    file: jar/cdk.jar
+
+  - name: MolWURCS
+    info: https://gitlab.com/glycoinfo/molwurcs
+    version: 0.10.2
+    url: https://gitlab.com/glycoinfo/molwurcs/-/package_files/89942780/download
+    file: jar/MolWURCS.jar
