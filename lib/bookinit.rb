@@ -5,18 +5,30 @@ require 'yaml'
 
 module BookInit
 
-  def self.load_settings(file_path)
+  flag = false
 
+  def self.load_settings(file_path, flag)
+    
     downloads = []
-
+    
     unless Dir.exist?(ENV['HOME'] + "/.glycobook")
       Dir.mkdir(ENV['HOME'] + "/.glycobook")
+    end
+
+    folder_path = File.dirname(__FILE__)+"/jar"
+    unless Dir.exist?(folder_path)
+      FileUtils.mkdir_p(folder_path)
     end
 
     if File.exist?(file_path)
       downloads = YAML.load_file(file_path)
     else
-      FileUtils.mv(File.dirname(File.expand_path(__FILE__)) + "/../jar.yml", file_path)
+      FileUtils.cp(File.dirname(File.expand_path(__FILE__)) + "/../jar.yml", file_path)
+    end
+
+    if flag
+      FileUtils.cp(File.dirname(File.expand_path(__FILE__)) + "/../jar.yml", file_path)
+      downloads = YAML.load_file(file_path)
     end
 
   end
@@ -31,23 +43,22 @@ Would you like to resolve Java dependencies?(No/yes)
     when "yes", "YES", "y"
     when "no", "NO", "n"
       exit 1
-    else
-      exit 1
   end
 
+    puts <<-EOT
 
-  # YAMLファイルからdownloads情報をロード
-  downloads = load_settings(ENV['HOME'] + "/.glycobook/jar.yml")
+Set recommended Java library version? (No/yes)
+    EOT
+
+  case gets.chomp
+    when "yes", "YES", "y"
+      flag = true
+  end
 
   require 'open-uri'
 
-  folder_path = File.dirname(__FILE__)+"/jar"
-  unless Dir.exist?(folder_path)
-    FileUtils.mkdir_p(folder_path)
-    puts "Folder created: #{folder_path}"
-  else
-    puts "Folder already exists: #{folder_path}"
-  end
+downloads = load_settings(ENV['HOME'] + "/.glycobook/jar.yml", flag)
+
   # ダウンロードを実行する
   downloads["libraries"].each do |download|
 

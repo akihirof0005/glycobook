@@ -1,13 +1,13 @@
 Gem::Specification.new do |spec|
   spec.name          = 'glycobook'
-  spec.version       = '0.1.0.alpha.25'
+  spec.version       = '0.1.0.alpha.26'
   spec.authors       = ['Akihiro Fujita']
   spec.email         = ['akihirof0005@gmail.com']
-  spec.date          = '2024-04-30'
+  spec.date          = '2024-05-13'
   spec.summary       = 'Glycobook is a JRuby library for glycaninformatics'
   spec.description   = 'Glycobook is a JRuby library for glycaninformatics'
   spec.homepage      = 'https://github.com/akihirof0005/glycobook/blob/main/README.md'
-  spec.license       = 'LGPL-3.0'
+  spec.license       = 'LGPL-3.0-only'
   spec.files         = ["lib/glycobook/Loggerinit.rb",
                         "lib/glycobook/wurcs_frame_work.rb",
                         "lib/glycobook/glycan_format_converter.rb",
