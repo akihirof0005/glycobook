@@ -11,10 +11,10 @@ java_import 'org.slf4j.Logger'
 
 class WurcsVerify
   def initialize
-      @wfw_latest_loader = self.create_custom_classloader("jar/wurcsframework-1.2.14.jar")
-      @wfw_101_loader = self.create_custom_classloader("jar/wurcsframework-1.3.1.jar")
-      @validator_latest = java.lang.Class.forName("org.glycoinfo.WURCSFramework.util.validation.WURCSValidator",true,@wfw_latest_loader)
-      @validator_101 = java.lang.Class.forName("org.glycoinfo.WURCSFramework.util.validation.WURCSValidator", true, @wfw_101_loader)
+      @wfw_glytoucan_loader = self.create_custom_classloader("jar/wurcsframework-1.2.14.jar")
+      @wfw_131_loader = self.create_custom_classloader("jar/wurcsframework-1.3.1.jar")
+      @validator_glytoucan = java.lang.Class.forName("org.glycoinfo.WURCSFramework.util.validation.WURCSValidator",true,@wfw_glytoucan_loader)
+      @validator_131 = java.lang.Class.forName("org.glycoinfo.WURCSFramework.util.validation.WURCSValidator", true, @wfw_131_loader)
   end
 
   def create_custom_classloader(jar_path)
@@ -24,13 +24,13 @@ class WurcsVerify
   end
 
   def validatorVerify(w)
-    v_latest = @validator_latest.new_instance
-    v_latest.start(w)
+    v_glytoucan = @validator_glytoucan.new_instance
+    v_glytoucan.start(w)
 
-    v_101 = @validator_101.new_instance
-    v_101.start(w)
+    v_131 = @validator_131.new_instance
+    v_131.start(w)
 
-    ret = {"1.2.14" => self.dovalidator(v_latest),
+    ret = {"1.2.14" => self.dovalidator(v_glytoucan),
             "1.3.1" => self.dovalidator131(v_131) }
     return ret
   end
