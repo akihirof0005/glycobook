@@ -35,9 +35,11 @@ module GlycoBook
     def self.ring_status(status)
       return GLYCAN[status]
     end
+
     def self.has_ring_type
       return GLYCAN["has_ring_type"]
     end
+    
     def self.has_archetype
       return GLYCAN["has_archetype"]
     end
@@ -58,7 +60,6 @@ module GlycoBook
       return GLYCAN["Archetype"]
     end
   
-  
   #  def self.generator_uri
   #    # Add error handling for missing or invalid ARCHETYPE_VERSION environment variable
   #    if @@archetype_version.nil? || @@archetype_version.empty?
@@ -73,6 +74,4 @@ module GlycoBook
     end
   end
   
-  
-
 end
