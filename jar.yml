@@ -24,6 +24,24 @@ libraries:
     url: "https://gitlab.com/glycoinfo/wurcsframework/-/package_files/87428121/download"
     file: "jar/wurcsframework-1.2.14.jar"
 
+  - name: wurcsframework-1.2.15
+    info: "https://gitlab.com/glycoinfo/wurcsframework"
+    version: 1.2.15
+    url: "https://gitlab.com/glycoinfo/wurcsframework/-/package_files/110116881/download"
+    file: "jar/wurcsframework-1.2.15.jar"
+
+  - name: wurcsframework-1.2.16
+    info: "https://gitlab.com/glycoinfo/wurcsframework"
+    version: 1.2.16
+    url: "https://gitlab.com/glycoinfo/wurcsframework/-/package_files/119628420/download"
+    file: "jar/wurcsframework-1.2.16.jar"
+
+  - name: wurcsframework-1.3.0
+    info: "https://gitlab.com/glycoinfo/wurcsframework"
+    version: 1.3.0
+    url: "https://gitlab.com/glycoinfo/wurcsframework/-/package_files/125589992/download"
+    file: "jar/wurcsframework-1.3.0.jar"
+
   - name: wurcsframework-1.3.1
     info: "https://gitlab.com/glycoinfo/wurcsframework"
     version: 1.3.1
