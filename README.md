@@ -1,3 +1,7 @@
+# News
+Please note that this project has been renamed and moved to the following URL:
+https://github.com/akihirof0005/glydevkit
+
 # getting start
 
 ## Install
